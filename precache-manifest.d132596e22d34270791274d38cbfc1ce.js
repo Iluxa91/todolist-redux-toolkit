@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b3d2126c8a0d3826936a64e67a02c822",
+    "revision": "c9c9ad7e089f043f6989c31c72402e9b",
     "url": "/todolist-redux-toolkit/index.html"
   },
   {
-    "revision": "8918bfad2234bf5b6803",
+    "revision": "e0c2c1af80ca27983ce7",
     "url": "/todolist-redux-toolkit/static/css/main.155097fa.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/todolist-redux-toolkit/static/js/2.985f8dbb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8918bfad2234bf5b6803",
-    "url": "/todolist-redux-toolkit/static/js/main.23423da5.chunk.js"
+    "revision": "e0c2c1af80ca27983ce7",
+    "url": "/todolist-redux-toolkit/static/js/main.612cad1a.chunk.js"
   },
   {
     "revision": "3fc49d727be666dae7a0",

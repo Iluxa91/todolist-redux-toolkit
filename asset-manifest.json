@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/todolist-redux-toolkit/static/css/main.155097fa.chunk.css",
-    "main.js": "/todolist-redux-toolkit/static/js/main.23423da5.chunk.js",
-    "main.js.map": "/todolist-redux-toolkit/static/js/main.23423da5.chunk.js.map",
+    "main.js": "/todolist-redux-toolkit/static/js/main.612cad1a.chunk.js",
+    "main.js.map": "/todolist-redux-toolkit/static/js/main.612cad1a.chunk.js.map",
     "runtime-main.js": "/todolist-redux-toolkit/static/js/runtime-main.175c7478.js",
     "runtime-main.js.map": "/todolist-redux-toolkit/static/js/runtime-main.175c7478.js.map",
     "static/js/2.985f8dbb.chunk.js": "/todolist-redux-toolkit/static/js/2.985f8dbb.chunk.js",
     "static/js/2.985f8dbb.chunk.js.map": "/todolist-redux-toolkit/static/js/2.985f8dbb.chunk.js.map",
     "index.html": "/todolist-redux-toolkit/index.html",
-    "precache-manifest.13eb3e9af0b8300c52fc54cd1892997b.js": "/todolist-redux-toolkit/precache-manifest.13eb3e9af0b8300c52fc54cd1892997b.js",
+    "precache-manifest.d132596e22d34270791274d38cbfc1ce.js": "/todolist-redux-toolkit/precache-manifest.d132596e22d34270791274d38cbfc1ce.js",
     "service-worker.js": "/todolist-redux-toolkit/service-worker.js",
     "static/css/main.155097fa.chunk.css.map": "/todolist-redux-toolkit/static/css/main.155097fa.chunk.css.map",
     "static/js/2.985f8dbb.chunk.js.LICENSE.txt": "/todolist-redux-toolkit/static/js/2.985f8dbb.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.175c7478.js",
     "static/js/2.985f8dbb.chunk.js",
     "static/css/main.155097fa.chunk.css",
-    "static/js/main.23423da5.chunk.js"
+    "static/js/main.612cad1a.chunk.js"
   ]
 }
