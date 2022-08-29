@@ -37,7 +37,7 @@ function App({demo = false}: PropsType) {
         if (!demo) {
             initializeApp()
         }
-    }, [initializeApp, demo])
+    }, [demo, initializeApp])
 
     const logoutHandler = useCallback(() => {
         logout()

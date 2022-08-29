@@ -2,13 +2,14 @@ import {authAPI} from "../../api/todolists-api"
 import {authActions} from "../Auth"
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
 import {appActions} from "../CommonActions/App"
+import {handleAsyncServerAppError} from "../../utils/error-utils";
 
-const initializeApp = createAsyncThunk("application/initializeApp", async (param, {dispatch}) => {
+const initializeApp = createAsyncThunk("application/initializeApp", async (param, thunkAPI) => {
     const res = await authAPI.me()
     if (res.data.resultCode === 0) {
-        dispatch(authActions.setIsLoggedIn({value: true}))
+        thunkAPI.dispatch(authActions.setIsLoggedIn({value: true}))
     } else {
-
+        handleAsyncServerAppError(res.data, thunkAPI, false)
     }
 })
 
