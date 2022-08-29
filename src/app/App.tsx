@@ -54,15 +54,16 @@ function App({demo = false}: PropsType) {
         <div className="App">
             <ErrorSnackbar/>
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar style={{justifyContent: "space-between"}}>
                     <IconButton edge="start" color="inherit" aria-label="menu">
                         <Menu/>
                     </IconButton>
                     <Typography variant="h6">
-                        News
+                        TODO LIST
                     </Typography>
                     {isLoggedIn &&
-                        <Button color="inherit" onClick={logoutHandler}>Log out</Button>}
+                        <Button color="inherit" onClick={logoutHandler}
+                        >Log out</Button>}
                 </Toolbar>
                 {status === "loading" && <LinearProgress/>}
             </AppBar>
