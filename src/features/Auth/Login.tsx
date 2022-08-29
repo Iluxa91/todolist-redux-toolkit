@@ -1,13 +1,21 @@
-import React from 'react'
-import {Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, TextField} from '@material-ui/core'
-import {FormikHelpers, useFormik} from 'formik'
-import {useSelector} from 'react-redux'
-import {login} from './auth-reducer'
-import {Redirect} from 'react-router-dom'
-import {selectIsLoggedIn} from './selectors'
-import {authActions} from './index'
-import {Action} from 'redux'
-import {useActions, useAppDispatch} from '../../utils/redux-utils'
+import React from "react"
+import {
+    Button,
+    Checkbox,
+    FormControl,
+    FormControlLabel,
+    FormGroup,
+    FormLabel,
+    Grid,
+    TextField
+} from "@material-ui/core"
+import {FormikHelpers, useFormik} from "formik"
+import {useSelector} from "react-redux"
+import {login} from "./auth-reducer"
+import {Redirect} from "react-router-dom"
+import {selectIsLoggedIn} from "./selectors"
+import {authActions} from "./index"
+import {useAppDispatch} from "../../utils/redux-utils"
 
 type FormValuesType = {
     email: string
@@ -24,25 +32,25 @@ export const Login = () => {
         validate: (values) => {
             if (!values.email) {
                 return {
-                    email: 'Email is required'
+                    email: "Email is required"
                 }
             }
             if (!values.password) {
                 return {
-                    password: 'Password is required'
+                    password: "Password is required"
                 }
             }
 
         },
         initialValues: {
-            email: '',
-            password: '',
+            email: "",
+            password: "",
             rememberMe: false
         },
         onSubmit: async (values: FormValuesType, formikHelpers: FormikHelpers<FormValuesType>) => {
             const resultAction = await dispatch(authActions.login(values));
 
-            if  (login.rejected.match(resultAction)) {
+            if (login.rejected.match(resultAction)) {
                 if (resultAction.payload?.fieldsErrors?.length) {
                     const error = resultAction.payload?.fieldsErrors[0];
                     formikHelpers.setFieldError(error.field, error.error);
@@ -52,7 +60,7 @@ export const Login = () => {
     })
 
     if (isLoggedIn) {
-        return <Redirect to={"/"} />
+        return <Redirect to={"/"}/>
     }
 
 
@@ -62,8 +70,10 @@ export const Login = () => {
                 <FormControl>
                     <FormLabel>
                         <p>
-                            To log in get registered <a href={'https://social-network.samuraijs.com/'}
-                                                        target={'_blank'}>here</a>
+                            To log in get registered <a
+                            href={"https://social-network.samuraijs.com/"}
+                            rel="noopener noreferrer"
+                            target={"_blank"}>here</a>
                         </p>
                         <p>
                             or use common test account credentials:
@@ -87,15 +97,17 @@ export const Login = () => {
                             margin="normal"
                             {...formik.getFieldProps("password")}
                         />
-                        {formik.errors.password ? <div>{formik.errors.password}</div> : null}
+                        {formik.errors.password ?
+                            <div>{formik.errors.password}</div> : null}
                         <FormControlLabel
-                            label={'Remember me'}
+                            label={"Remember me"}
                             control={<Checkbox
                                 {...formik.getFieldProps("rememberMe")}
                                 checked={formik.values.rememberMe}
                             />}
                         />
-                        <Button type={'submit'} variant={'contained'} color={'primary'}>Login</Button>
+                        <Button type={"submit"} variant={"contained"}
+                                color={"primary"}>Login</Button>
                     </FormGroup>
                 </FormControl>
             </form>

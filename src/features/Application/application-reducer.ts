@@ -1,9 +1,9 @@
-import {authAPI} from '../../api/todolists-api'
-import {authActions} from '../Auth'
-import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
-import {appActions} from '../CommonActions/App'
+import {authAPI} from "../../api/todolists-api"
+import {authActions} from "../Auth"
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
+import {appActions} from "../CommonActions/App"
 
-const initializeApp = createAsyncThunk('application/initializeApp', async (param, {dispatch}) => {
+const initializeApp = createAsyncThunk("application/initializeApp", async (param, {dispatch}) => {
     const res = await authAPI.me()
     if (res.data.resultCode === 0) {
         dispatch(authActions.setIsLoggedIn({value: true}))
@@ -17,16 +17,16 @@ export const asyncActions = {
 }
 
 export const slice = createSlice({
-    name: 'app',
+    name: "app",
     initialState: {
-        status: 'idle',
+        status: "idle",
         error: null,
         isInitialized: false
     } as InitialStateType,
     reducers: {},
     extraReducers: builder => {
         builder
-            .addCase(initializeApp.fulfilled, (state, action) => {
+            .addCase(initializeApp.fulfilled, (state) => {
                 state.isInitialized = true
             })
             .addCase(appActions.setAppStatus, (state, action) => {
@@ -38,7 +38,7 @@ export const slice = createSlice({
     }
 })
 
-export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
+export type RequestStatusType = "idle" | "loading" | "succeeded" | "failed"
 export type InitialStateType = {
     // происходит ли сейчас взаимодействие с сервером
     status: RequestStatusType
