@@ -30,7 +30,6 @@ export const TodolistsList: React.FC<PropsType> = ({demo = false}) => {
     const addTodolistCallback = useCallback(async (title: string, helper: AddItemFormSubmitHelperType) => {
         let thunk = todolistsActions.addTodolistTC(title)
         const resultAction = await dispatch(thunk)
-
         if (todolistsActions.addTodolistTC.rejected.match(resultAction)) {
             if (resultAction.payload?.errors?.length) {
                 const errorMessage = resultAction.payload?.errors[0]
@@ -48,8 +47,10 @@ export const TodolistsList: React.FC<PropsType> = ({demo = false}) => {
         if (demo || !isLoggedIn) {
             return
         }
-        fetchTodolistsTC()
-    }, [demo, isLoggedIn, fetchTodolistsTC])
+        if (!todolists.length){
+            fetchTodolistsTC()
+        }
+    }, [demo])
 
 
     if (!isLoggedIn) {

@@ -25,8 +25,10 @@ export const Todolist = React.memo(function ({demo = false, ...props}: PropsType
         if (demo) {
             return
         }
-        fetchTasks(props.todolist.id)
-    }, [demo, props.todolist.id, fetchTasks])
+        if(!props.tasks.length){
+            fetchTasks(props.todolist.id)
+        }
+    }, [demo, props.todolist.id, props.tasks, fetchTasks])
 
     const addTaskCallback = useCallback(async (title: string, helper: AddItemFormSubmitHelperType) => {
 
